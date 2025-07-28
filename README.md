@@ -66,7 +66,7 @@ SwiftUI
 ```swift
 struct ContentView: View {
     var body: some View {
-        MiniAppContainerView(configuration: myMiniAppConfig)
+        MiniAppContainerView(configuration: config)
             .edgesIgnoringSafeArea(.all) // Optional: if you want fullscreen
     }
 }
