@@ -41,7 +41,7 @@ You can integrate via **SPM**:
 ```Swift
 let config = MiniAppConfigurations(
     appId: "remoteMiniApp",
-    entryHtmlPath: "https://mini-app-5713b.web.app/",
+    entryHtmlPath: "https://",
     payload: """
     {
         "id": "1",
