@@ -54,13 +54,16 @@ let config = MiniAppConfigurations(
 
 ### 🔹 Step 2: Launch the MiniApp ViewController
 
-```UIKit
+UIKit
+
+```swift
 let controller = MiniAppViewController(configuration: config)
 present(controller, animated: true)
 ```
 
+SwiftUI
 
-```SwiftUI
+```swift
 struct ContentView: View {
     var body: some View {
         MiniAppContainerView(configuration: myMiniAppConfig)
