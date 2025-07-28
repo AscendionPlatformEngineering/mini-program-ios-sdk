@@ -1,0 +1,95 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target x86_64-apple-ios15.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name MiniProgramSDK
+import Foundation
+import Swift
+import SwiftUI
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct MiniAppConfigurations : Swift.Codable {
+  public let appId: Swift.String
+  public let title: Swift.String
+  public let entryHtmlPath: Swift.String?
+  public let payload: Swift.String?
+  public init(appId: Swift.String, title: Swift.String = "Mini App", entryHtmlPath: Swift.String? = nil, payload: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_Concurrency.MainActor @preconcurrency final public class MiniAppViewController : UIKit.UIViewController, WebKit.WKScriptMessageHandler, WebKit.WKNavigationDelegate {
+  @_Concurrency.MainActor @preconcurrency public init(configuration: MiniProgramSDK.MiniAppConfigurations, registry: (any MiniProgramSDK.JSAPIRegistry)? = nil)
+  @available(*, unavailable)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  @_Concurrency.MainActor @preconcurrency @objc final public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
+  @objc deinit
+}
+@_Concurrency.MainActor @preconcurrency public struct MiniAppContainerView : SwiftUI.UIViewControllerRepresentable {
+  public typealias UIViewControllerType = MiniProgramSDK.MiniAppViewController
+  @_Concurrency.MainActor @preconcurrency public init(configuration: MiniProgramSDK.MiniAppConfigurations, registry: (any MiniProgramSDK.JSAPIRegistry)? = nil)
+  @_Concurrency.MainActor @preconcurrency public func makeUIViewController(context: MiniProgramSDK.MiniAppContainerView.Context) -> MiniProgramSDK.MiniAppViewController
+  @_Concurrency.MainActor @preconcurrency public func updateUIViewController(_ uiViewController: MiniProgramSDK.MiniAppViewController, context: MiniProgramSDK.MiniAppContainerView.Context)
+  public typealias Body = Swift.Never
+  public typealias Coordinator = Swift.Void
+}
+public protocol JSAPIHandler {
+  var method: MiniProgramSDK.JSAPIMethodName { get }
+  func handle(params: [Swift.String : Any], callbackId: Swift.String, webView: WebKit.WKWebView)
+}
+public protocol JSAPIRegistry {
+  func handler(for method: MiniProgramSDK.JSAPIMethodName) -> (any MiniProgramSDK.JSAPIHandler)?
+}
+public protocol JSBridgeProtocol {
+  func invoke(method: MiniProgramSDK.JSAPIMethodName, params: Swift.String, callbackId: Swift.String)
+}
+public class APIHandler : MiniProgramSDK.JSAPIHandler {
+  final public let method: MiniProgramSDK.JSAPIMethodName
+  public init(method: MiniProgramSDK.JSAPIMethodName, handler: @escaping (_ params: [Swift.String : Any], _ callbackId: Swift.String, _ webView: WebKit.WKWebView) -> Swift.Void)
+  public func handle(params: [Swift.String : Any], callbackId: Swift.String, webView: WebKit.WKWebView)
+  @objc deinit
+}
+public class APIRegistry : MiniProgramSDK.JSAPIRegistry {
+  public init(handlers: [any MiniProgramSDK.JSAPIHandler])
+  public func handler(for method: MiniProgramSDK.JSAPIMethodName) -> (any MiniProgramSDK.JSAPIHandler)?
+  @objc deinit
+}
+extension MiniProgramSDK.APIRegistry {
+  public static func defaultHandlers(webView: WebKit.WKWebView) -> [any MiniProgramSDK.JSAPIHandler]
+}
+@_hasMissingDesignatedInitializers public class JSAPIBridge {
+  public static func configure(for webView: WebKit.WKWebView, registry: any MiniProgramSDK.JSAPIRegistry) -> any MiniProgramSDK.JSBridgeProtocol
+  @objc deinit
+}
+public class JSAPIDispatcher {
+  public init(webView: WebKit.WKWebView, registry: any MiniProgramSDK.JSAPIRegistry)
+  public func dispatch(method: MiniProgramSDK.JSAPIMethodName, params: Swift.String, callbackId: Swift.String)
+  public static func postResult(webView: WebKit.WKWebView, callbackId: Swift.String, status: Swift.String, result: Swift.String)
+  @objc deinit
+}
+public enum JSAPIMethodName : Swift.String {
+  case authGetToken
+  case deviceGetInfo
+  case userGetInfo
+  case mediaOpenCamera
+  case nativeSendPayload
+  case deviceBack
+  case deviceHome
+  case unknown
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+final public class JSBridge : MiniProgramSDK.JSBridgeProtocol {
+  public init(dispatcher: MiniProgramSDK.JSAPIDispatcher)
+  final public func invoke(method: MiniProgramSDK.JSAPIMethodName, params: Swift.String, callbackId: Swift.String)
+  @objc deinit
+}
+extension MiniProgramSDK.MiniAppContainerView : Swift.Sendable {}
+extension MiniProgramSDK.JSAPIMethodName : Swift.Equatable {}
+extension MiniProgramSDK.JSAPIMethodName : Swift.Hashable {}
+extension MiniProgramSDK.JSAPIMethodName : Swift.RawRepresentable {}
