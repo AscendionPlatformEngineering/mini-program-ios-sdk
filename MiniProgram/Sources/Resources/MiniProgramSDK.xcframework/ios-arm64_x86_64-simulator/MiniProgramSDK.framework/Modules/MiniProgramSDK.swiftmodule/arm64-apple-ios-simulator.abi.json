@@ -27,8 +27,7 @@
             "moduleName": "MiniProgramSDK",
             "declAttributes": [
               "HasStorage",
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "isLet": true,
             "hasStorage": true,
@@ -72,8 +71,7 @@
             "moduleName": "MiniProgramSDK",
             "declAttributes": [
               "HasStorage",
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "isLet": true,
             "hasStorage": true,
@@ -101,8 +99,8 @@
           },
           {
             "kind": "Var",
-            "name": "entryHtmlPath",
-            "printedName": "entryHtmlPath",
+            "name": "env",
+            "printedName": "env",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -120,13 +118,12 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:14MiniProgramSDK0A17AppConfigurationsV13entryHtmlPathSSSgvp",
-            "mangledName": "$s14MiniProgramSDK0A17AppConfigurationsV13entryHtmlPathSSSgvp",
+            "usr": "s:14MiniProgramSDK0A17AppConfigurationsV3envSSSgvp",
+            "mangledName": "$s14MiniProgramSDK0A17AppConfigurationsV3envSSSgvp",
             "moduleName": "MiniProgramSDK",
             "declAttributes": [
               "HasStorage",
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "isLet": true,
             "hasStorage": true,
@@ -152,8 +149,112 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:14MiniProgramSDK0A17AppConfigurationsV13entryHtmlPathSSSgvg",
-                "mangledName": "$s14MiniProgramSDK0A17AppConfigurationsV13entryHtmlPathSSSgvg",
+                "usr": "s:14MiniProgramSDK0A17AppConfigurationsV3envSSSgvg",
+                "mangledName": "$s14MiniProgramSDK0A17AppConfigurationsV3envSSSgvg",
+                "moduleName": "MiniProgramSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "nonce",
+            "printedName": "nonce",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14MiniProgramSDK0A17AppConfigurationsV5nonceSSSgvp",
+            "mangledName": "$s14MiniProgramSDK0A17AppConfigurationsV5nonceSSSgvp",
+            "moduleName": "MiniProgramSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14MiniProgramSDK0A17AppConfigurationsV5nonceSSSgvg",
+                "mangledName": "$s14MiniProgramSDK0A17AppConfigurationsV5nonceSSSgvg",
+                "moduleName": "MiniProgramSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "requestedVersion",
+            "printedName": "requestedVersion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14MiniProgramSDK0A17AppConfigurationsV16requestedVersionSSvp",
+            "mangledName": "$s14MiniProgramSDK0A17AppConfigurationsV16requestedVersionSSvp",
+            "moduleName": "MiniProgramSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14MiniProgramSDK0A17AppConfigurationsV16requestedVersionSSvg",
+                "mangledName": "$s14MiniProgramSDK0A17AppConfigurationsV16requestedVersionSSvg",
                 "moduleName": "MiniProgramSDK",
                 "implicit": true,
                 "accessorKind": "get"
@@ -186,8 +287,7 @@
             "moduleName": "MiniProgramSDK",
             "declAttributes": [
               "HasStorage",
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "isLet": true,
             "hasStorage": true,
@@ -224,7 +324,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(appId:title:entryHtmlPath:payload:)",
+            "printedName": "init(appId:title:env:nonce:requestedVersion:payload:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -274,11 +374,32 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:14MiniProgramSDK0A17AppConfigurationsV5appId5title13entryHtmlPath7payloadACSS_S2SSgAHtcfc",
-            "mangledName": "$s14MiniProgramSDK0A17AppConfigurationsV5appId5title13entryHtmlPath7payloadACSS_S2SSgAHtcfc",
+            "usr": "s:14MiniProgramSDK0A17AppConfigurationsV5appId5title3env5nonce16requestedVersion7payloadACSS_S2SSgAJSSAJtcfc",
+            "mangledName": "$s14MiniProgramSDK0A17AppConfigurationsV5appId5title3env5nonce16requestedVersion7payloadACSS_S2SSgAJSSAJtcfc",
             "moduleName": "MiniProgramSDK",
             "declAttributes": [
               "AccessControl",
@@ -379,6 +500,16 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MiniProgramSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "SwiftUI",
         "printedName": "SwiftUI",
         "declKind": "Import",
@@ -396,6 +527,16 @@
         "name": "WebKit",
         "printedName": "WebKit",
         "declKind": "Import",
+        "moduleName": "MiniProgramSDK",
+        "declAttributes": [
+          "Preconcurrency"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "os.log",
+        "printedName": "os.log",
+        "declKind": "Import",
         "moduleName": "MiniProgramSDK"
       },
       {
@@ -404,9 +545,125 @@
         "printedName": "MiniAppViewController",
         "children": [
           {
+            "kind": "Var",
+            "name": "delegate",
+            "printedName": "delegate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WeakStorage",
+                "printedName": "(any MiniProgramSDK.MiniAppDelegate)?"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14MiniProgramSDK0A17AppViewControllerC8delegateAA0aD8Delegate_pSgvp",
+            "mangledName": "$s14MiniProgramSDK0A17AppViewControllerC8delegateAA0aD8Delegate_pSgvp",
+            "moduleName": "MiniProgramSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "Preconcurrency",
+              "Custom",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "ownership": 1,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(any MiniProgramSDK.MiniAppDelegate)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MiniAppDelegate",
+                        "printedName": "any MiniProgramSDK.MiniAppDelegate",
+                        "usr": "s:14MiniProgramSDK0A11AppDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14MiniProgramSDK0A17AppViewControllerC8delegateAA0aD8Delegate_pSgvg",
+                "mangledName": "$s14MiniProgramSDK0A17AppViewControllerC8delegateAA0aD8Delegate_pSgvg",
+                "moduleName": "MiniProgramSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(any MiniProgramSDK.MiniAppDelegate)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MiniAppDelegate",
+                        "printedName": "any MiniProgramSDK.MiniAppDelegate",
+                        "usr": "s:14MiniProgramSDK0A11AppDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14MiniProgramSDK0A17AppViewControllerC8delegateAA0aD8Delegate_pSgvs",
+                "mangledName": "$s14MiniProgramSDK0A17AppViewControllerC8delegateAA0aD8Delegate_pSgvs",
+                "moduleName": "MiniProgramSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14MiniProgramSDK0A17AppViewControllerC8delegateAA0aD8Delegate_pSgvM",
+                "mangledName": "$s14MiniProgramSDK0A17AppViewControllerC8delegateAA0aD8Delegate_pSgvM",
+                "moduleName": "MiniProgramSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(configuration:registry:)",
+            "printedName": "init(configuration:registry:delegate:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -434,11 +691,26 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any MiniProgramSDK.MiniAppDelegate)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MiniAppDelegate",
+                    "printedName": "any MiniProgramSDK.MiniAppDelegate",
+                    "usr": "s:14MiniProgramSDK0A11AppDelegateP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:14MiniProgramSDK0A17AppViewControllerC13configuration8registryAcA0aD14ConfigurationsV_AA13JSAPIRegistry_pSgtcfc",
-            "mangledName": "$s14MiniProgramSDK0A17AppViewControllerC13configuration8registryAcA0aD14ConfigurationsV_AA13JSAPIRegistry_pSgtcfc",
+            "usr": "s:14MiniProgramSDK0A17AppViewControllerC13configuration8registry8delegateAcA0aD14ConfigurationsV_AA13JSAPIRegistry_pSgAA0aD8Delegate_pSgtcfc",
+            "mangledName": "$s14MiniProgramSDK0A17AppViewControllerC13configuration8registry8delegateAcA0aD14ConfigurationsV_AA13JSAPIRegistry_pSgAA0aD8Delegate_pSgtcfc",
             "moduleName": "MiniProgramSDK",
             "declAttributes": [
               "Preconcurrency",
@@ -471,7 +743,8 @@
               "Preconcurrency",
               "Custom",
               "Override",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -523,6 +796,62 @@
           },
           {
             "kind": "Function",
+            "name": "webView",
+            "printedName": "webView(_:decidePolicyFor:decisionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "WKWebView",
+                "printedName": "WebKit.WKWebView",
+                "usr": "c:objc(cs)WKWebView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "WKNavigationAction",
+                "printedName": "WebKit.WKNavigationAction",
+                "usr": "c:objc(cs)WKNavigationAction"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(WebKit.WKNavigationActionPolicy) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "WKNavigationActionPolicy",
+                    "printedName": "WebKit.WKNavigationActionPolicy",
+                    "usr": "c:@E@WKNavigationActionPolicy"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MiniProgramSDK@objc(cs)MiniAppViewController(im)webView:decidePolicyForNavigationAction:decisionHandler:",
+            "mangledName": "$s14MiniProgramSDK0A17AppViewControllerC03webE0_15decidePolicyFor15decisionHandlerySo05WKWebE0C_So18WKNavigationActionCySo0noI0VctF",
+            "moduleName": "MiniProgramSDK",
+            "objc_name": "webView:decidePolicyForNavigationAction:decisionHandler:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "userContentController",
             "printedName": "userContentController(_:didReceive:)",
             "children": [
@@ -554,7 +883,8 @@
               "ObjC",
               "Preconcurrency",
               "Custom",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -703,6 +1033,13 @@
             "printedName": "UITraitChangeObservable",
             "usr": "s:5UIKit23UITraitChangeObservableP",
             "mangledName": "$s5UIKit23UITraitChangeObservableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
           }
         ]
       },
@@ -714,7 +1051,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(configuration:registry:)",
+            "printedName": "init(configuration:registry:delegate:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -742,16 +1079,32 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any MiniProgramSDK.MiniAppDelegate)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MiniAppDelegate",
+                    "printedName": "any MiniProgramSDK.MiniAppDelegate",
+                    "usr": "s:14MiniProgramSDK0A11AppDelegateP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:14MiniProgramSDK0A16AppContainerViewV13configuration8registryAcA0aD14ConfigurationsV_AA13JSAPIRegistry_pSgtcfc",
-            "mangledName": "$s14MiniProgramSDK0A16AppContainerViewV13configuration8registryAcA0aD14ConfigurationsV_AA13JSAPIRegistry_pSgtcfc",
+            "usr": "s:14MiniProgramSDK0A16AppContainerViewV13configuration8registry8delegateAcA0aD14ConfigurationsV_AA13JSAPIRegistry_pSgAA0aD8Delegate_pSgtcfc",
+            "mangledName": "$s14MiniProgramSDK0A16AppContainerViewV13configuration8registry8delegateAcA0aD14ConfigurationsV_AA13JSAPIRegistry_pSgAA0aD8Delegate_pSgtcfc",
             "moduleName": "MiniProgramSDK",
             "declAttributes": [
               "Preconcurrency",
               "Custom",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "init_kind": "Designated"
           },
@@ -924,6 +1277,23 @@
             "mangledName": "$ss8SendableP"
           }
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MiniProgramSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MiniProgramSDK"
       },
       {
         "kind": "Import",
@@ -1195,6 +1565,512 @@
         "usr": "s:14MiniProgramSDK16JSBridgeProtocolP",
         "mangledName": "$s14MiniProgramSDK16JSBridgeProtocolP",
         "moduleName": "MiniProgramSDK",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MiniProgramSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MiniAppEvent",
+        "printedName": "MiniAppEvent",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "CONSENT_CONFIRMED",
+            "printedName": "CONSENT_CONFIRMED",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MiniProgramSDK.MiniAppEvent.Type) -> MiniProgramSDK.MiniAppEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MiniAppEvent",
+                    "printedName": "MiniProgramSDK.MiniAppEvent",
+                    "usr": "s:14MiniProgramSDK0A8AppEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MiniProgramSDK.MiniAppEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MiniAppEvent",
+                        "printedName": "MiniProgramSDK.MiniAppEvent",
+                        "usr": "s:14MiniProgramSDK0A8AppEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14MiniProgramSDK0A8AppEventO17CONSENT_CONFIRMEDyA2CmF",
+            "mangledName": "$s14MiniProgramSDK0A8AppEventO17CONSENT_CONFIRMEDyA2CmF",
+            "moduleName": "MiniProgramSDK",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "CONSENT_CANCELLED",
+            "printedName": "CONSENT_CANCELLED",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MiniProgramSDK.MiniAppEvent.Type) -> MiniProgramSDK.MiniAppEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MiniAppEvent",
+                    "printedName": "MiniProgramSDK.MiniAppEvent",
+                    "usr": "s:14MiniProgramSDK0A8AppEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MiniProgramSDK.MiniAppEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MiniAppEvent",
+                        "printedName": "MiniProgramSDK.MiniAppEvent",
+                        "usr": "s:14MiniProgramSDK0A8AppEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14MiniProgramSDK0A8AppEventO17CONSENT_CANCELLEDyA2CmF",
+            "mangledName": "$s14MiniProgramSDK0A8AppEventO17CONSENT_CANCELLEDyA2CmF",
+            "moduleName": "MiniProgramSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "NAVIGATE_TO_HOST",
+            "printedName": "NAVIGATE_TO_HOST",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MiniProgramSDK.MiniAppEvent.Type) -> MiniProgramSDK.MiniAppEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MiniAppEvent",
+                    "printedName": "MiniProgramSDK.MiniAppEvent",
+                    "usr": "s:14MiniProgramSDK0A8AppEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MiniProgramSDK.MiniAppEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MiniAppEvent",
+                        "printedName": "MiniProgramSDK.MiniAppEvent",
+                        "usr": "s:14MiniProgramSDK0A8AppEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14MiniProgramSDK0A8AppEventO16NAVIGATE_TO_HOSTyA2CmF",
+            "mangledName": "$s14MiniProgramSDK0A8AppEventO16NAVIGATE_TO_HOSTyA2CmF",
+            "moduleName": "MiniProgramSDK",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "SESSION_TIMEOUT",
+            "printedName": "SESSION_TIMEOUT",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MiniProgramSDK.MiniAppEvent.Type) -> MiniProgramSDK.MiniAppEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MiniAppEvent",
+                    "printedName": "MiniProgramSDK.MiniAppEvent",
+                    "usr": "s:14MiniProgramSDK0A8AppEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MiniProgramSDK.MiniAppEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MiniAppEvent",
+                        "printedName": "MiniProgramSDK.MiniAppEvent",
+                        "usr": "s:14MiniProgramSDK0A8AppEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14MiniProgramSDK0A8AppEventO15SESSION_TIMEOUTyA2CmF",
+            "mangledName": "$s14MiniProgramSDK0A8AppEventO15SESSION_TIMEOUTyA2CmF",
+            "moduleName": "MiniProgramSDK",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "UNKNOWN",
+            "printedName": "UNKNOWN",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MiniProgramSDK.MiniAppEvent.Type) -> MiniProgramSDK.MiniAppEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MiniAppEvent",
+                    "printedName": "MiniProgramSDK.MiniAppEvent",
+                    "usr": "s:14MiniProgramSDK0A8AppEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MiniProgramSDK.MiniAppEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MiniAppEvent",
+                        "printedName": "MiniProgramSDK.MiniAppEvent",
+                        "usr": "s:14MiniProgramSDK0A8AppEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14MiniProgramSDK0A8AppEventO7UNKNOWNyA2CmF",
+            "mangledName": "$s14MiniProgramSDK0A8AppEventO7UNKNOWNyA2CmF",
+            "moduleName": "MiniProgramSDK",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "name",
+            "printedName": "name",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14MiniProgramSDK0A8AppEventO4nameSSvp",
+            "mangledName": "$s14MiniProgramSDK0A8AppEventO4nameSSvp",
+            "moduleName": "MiniProgramSDK",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14MiniProgramSDK0A8AppEventO4nameSSvg",
+                "mangledName": "$s14MiniProgramSDK0A8AppEventO4nameSSvg",
+                "moduleName": "MiniProgramSDK",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MiniAppEvent",
+                "printedName": "MiniProgramSDK.MiniAppEvent",
+                "usr": "s:14MiniProgramSDK0A8AppEventO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MiniAppEvent",
+                "printedName": "MiniProgramSDK.MiniAppEvent",
+                "usr": "s:14MiniProgramSDK0A8AppEventO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14MiniProgramSDK0A8AppEventO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s14MiniProgramSDK0A8AppEventO2eeoiySbAC_ACtFZ",
+            "moduleName": "MiniProgramSDK",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14MiniProgramSDK0A8AppEventO9hashValueSivp",
+            "mangledName": "$s14MiniProgramSDK0A8AppEventO9hashValueSivp",
+            "moduleName": "MiniProgramSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14MiniProgramSDK0A8AppEventO9hashValueSivg",
+                "mangledName": "$s14MiniProgramSDK0A8AppEventO9hashValueSivg",
+                "moduleName": "MiniProgramSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14MiniProgramSDK0A8AppEventO4hash4intoys6HasherVz_tF",
+            "mangledName": "$s14MiniProgramSDK0A8AppEventO4hash4intoys6HasherVz_tF",
+            "moduleName": "MiniProgramSDK",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:14MiniProgramSDK0A8AppEventO",
+        "mangledName": "$s14MiniProgramSDK0A8AppEventO",
+        "moduleName": "MiniProgramSDK",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MiniAppDelegate",
+        "printedName": "MiniAppDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "onEvent",
+            "printedName": "onEvent(event:data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MiniAppEvent",
+                "printedName": "MiniProgramSDK.MiniAppEvent",
+                "usr": "s:14MiniProgramSDK0A8AppEventO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14MiniProgramSDK0A11AppDelegateP7onEvent5event4datayAA0adG0O_SSSgtF",
+            "mangledName": "$s14MiniProgramSDK0A11AppDelegateP7onEvent5event4datayAA0adG0O_SSSgtF",
+            "moduleName": "MiniProgramSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : MiniProgramSDK.MiniAppDelegate>",
+            "sugared_genericSig": "<Self where Self : MiniProgramSDK.MiniAppDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onEvent",
+            "printedName": "onEvent(event:data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MiniAppEvent",
+                "printedName": "MiniProgramSDK.MiniAppEvent",
+                "usr": "s:14MiniProgramSDK0A8AppEventO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14MiniProgramSDK0A11AppDelegatePAAE7onEvent5event4datayAA0adG0O_SSSgtF",
+            "mangledName": "$s14MiniProgramSDK0A11AppDelegatePAAE7onEvent5event4datayAA0adG0O_SSSgtF",
+            "moduleName": "MiniProgramSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : MiniProgramSDK.MiniAppDelegate>",
+            "sugared_genericSig": "<Self where Self : MiniProgramSDK.MiniAppDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:14MiniProgramSDK0A11AppDelegateP",
+        "mangledName": "$s14MiniProgramSDK0A11AppDelegateP",
+        "moduleName": "MiniProgramSDK",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
@@ -1885,46 +2761,6 @@
         "children": [
           {
             "kind": "Var",
-            "name": "authGetToken",
-            "printedName": "authGetToken",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(MiniProgramSDK.JSAPIMethodName.Type) -> MiniProgramSDK.JSAPIMethodName",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "JSAPIMethodName",
-                    "printedName": "MiniProgramSDK.JSAPIMethodName",
-                    "usr": "s:14MiniProgramSDK15JSAPIMethodNameO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "MiniProgramSDK.JSAPIMethodName.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "JSAPIMethodName",
-                        "printedName": "MiniProgramSDK.JSAPIMethodName",
-                        "usr": "s:14MiniProgramSDK15JSAPIMethodNameO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:14MiniProgramSDK15JSAPIMethodNameO12authGetTokenyA2CmF",
-            "mangledName": "$s14MiniProgramSDK15JSAPIMethodNameO12authGetTokenyA2CmF",
-            "moduleName": "MiniProgramSDK",
-            "declAttributes": [
-              "RawDocComment"
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "deviceGetInfo",
             "printedName": "deviceGetInfo",
             "children": [
@@ -2045,46 +2881,6 @@
           },
           {
             "kind": "Var",
-            "name": "nativeSendPayload",
-            "printedName": "nativeSendPayload",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(MiniProgramSDK.JSAPIMethodName.Type) -> MiniProgramSDK.JSAPIMethodName",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "JSAPIMethodName",
-                    "printedName": "MiniProgramSDK.JSAPIMethodName",
-                    "usr": "s:14MiniProgramSDK15JSAPIMethodNameO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "MiniProgramSDK.JSAPIMethodName.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "JSAPIMethodName",
-                        "printedName": "MiniProgramSDK.JSAPIMethodName",
-                        "usr": "s:14MiniProgramSDK15JSAPIMethodNameO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:14MiniProgramSDK15JSAPIMethodNameO17nativeSendPayloadyA2CmF",
-            "mangledName": "$s14MiniProgramSDK15JSAPIMethodNameO17nativeSendPayloadyA2CmF",
-            "moduleName": "MiniProgramSDK",
-            "declAttributes": [
-              "RawDocComment"
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "deviceBack",
             "printedName": "deviceBack",
             "children": [
@@ -2158,6 +2954,86 @@
             "declKind": "EnumElement",
             "usr": "s:14MiniProgramSDK15JSAPIMethodNameO10deviceHomeyA2CmF",
             "mangledName": "$s14MiniProgramSDK15JSAPIMethodNameO10deviceHomeyA2CmF",
+            "moduleName": "MiniProgramSDK",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "nativeHandleDeeplink",
+            "printedName": "nativeHandleDeeplink",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MiniProgramSDK.JSAPIMethodName.Type) -> MiniProgramSDK.JSAPIMethodName",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "JSAPIMethodName",
+                    "printedName": "MiniProgramSDK.JSAPIMethodName",
+                    "usr": "s:14MiniProgramSDK15JSAPIMethodNameO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MiniProgramSDK.JSAPIMethodName.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JSAPIMethodName",
+                        "printedName": "MiniProgramSDK.JSAPIMethodName",
+                        "usr": "s:14MiniProgramSDK15JSAPIMethodNameO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14MiniProgramSDK15JSAPIMethodNameO20nativeHandleDeeplinkyA2CmF",
+            "mangledName": "$s14MiniProgramSDK15JSAPIMethodNameO20nativeHandleDeeplinkyA2CmF",
+            "moduleName": "MiniProgramSDK",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "locationGetCurrentPosition",
+            "printedName": "locationGetCurrentPosition",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MiniProgramSDK.JSAPIMethodName.Type) -> MiniProgramSDK.JSAPIMethodName",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "JSAPIMethodName",
+                    "printedName": "MiniProgramSDK.JSAPIMethodName",
+                    "usr": "s:14MiniProgramSDK15JSAPIMethodNameO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MiniProgramSDK.JSAPIMethodName.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JSAPIMethodName",
+                        "printedName": "MiniProgramSDK.JSAPIMethodName",
+                        "usr": "s:14MiniProgramSDK15JSAPIMethodNameO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14MiniProgramSDK15JSAPIMethodNameO26locationGetCurrentPositionyA2CmF",
+            "mangledName": "$s14MiniProgramSDK15JSAPIMethodNameO26locationGetCurrentPositionyA2CmF",
             "moduleName": "MiniProgramSDK",
             "declAttributes": [
               "RawDocComment"
@@ -2454,66 +3330,446 @@
         "declAttributes": [
           "RawDocComment"
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MiniProgramSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MiniProgramSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MiniProgramSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
+        "declKind": "Import",
+        "moduleName": "MiniProgramSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "MiniProgramSDK"
+      },
+      {
+        "kind": "Function",
+        "name": "openCameraAndReturnBase64",
+        "printedName": "openCameraAndReturnBase64(webView:callbackId:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Void",
+            "printedName": "()"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "WKWebView",
+            "printedName": "WebKit.WKWebView",
+            "usr": "c:objc(cs)WKWebView"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "String",
+            "printedName": "Swift.String",
+            "usr": "s:SS"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:14MiniProgramSDK25openCameraAndReturnBase647webView10callbackIdySo05WKWebJ0C_SStF",
+        "mangledName": "$s14MiniProgramSDK25openCameraAndReturnBase647webView10callbackIdySo05WKWebJ0C_SStF",
+        "moduleName": "MiniProgramSDK",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MiniProgramSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "MiniProgramSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MiniProgramSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MiniProgramSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MiniProgramSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       }
     ],
     "json_format_version": 8
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/ces\/Documents\/Ascendion\/MiniProgramSDK\/MiniProgramSDK\/Sources\/Configurations\/MiniAppConfigurations.swift",
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Configurations\/MiniAppConfigurations.swift",
       "kind": "StringLiteral",
-      "offset": 1540,
+      "offset": 786,
       "length": 10,
       "value": "\"Mini App\""
     },
     {
-      "filePath": "\/Users\/ces\/Documents\/Ascendion\/MiniProgramSDK\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
-      "kind": "StringLiteral",
-      "offset": 347,
-      "length": 15,
-      "value": "\"auth.getToken\""
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 774,
+      "length": 2,
+      "value": "20"
     },
     {
-      "filePath": "\/Users\/ces\/Documents\/Ascendion\/MiniProgramSDK\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 834,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1023,
+      "length": 2,
+      "value": "32"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1057,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1155,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1344,
+      "length": 2,
+      "value": "18"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1378,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1438,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
       "kind": "StringLiteral",
-      "offset": 466,
+      "offset": 1564,
+      "length": 57,
+      "value": "\"The following information will be requested to proceed:\""
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1702,
+      "length": 2,
+      "value": "18"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1736,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1796,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1987,
+      "length": 2,
+      "value": "18"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2021,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2081,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 2231,
+      "length": 10,
+      "value": "\"Continue\""
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2388,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2455,
+      "length": 2,
+      "value": "18"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2518,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 2667,
+      "length": 8,
+      "value": "\"Cancel\""
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2822,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2889,
+      "length": 2,
+      "value": "18"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/ConsentViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2952,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/MiniAppViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 785,
+      "length": 8,
+      "value": "\"native\""
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/MiniAppViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 883,
+      "length": 21,
+      "value": "\"com.miniprogram.sdk\""
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/MiniAppViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 916,
+      "length": 23,
+      "value": "\"MiniAppViewController\""
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/MiniAppViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1913,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/SessionTimeoutController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 923,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/SessionTimeoutController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1298,
+      "length": 3,
+      "value": "120"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/SessionTimeoutController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1330,
+      "length": 2,
+      "value": "60"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
+      "kind": "StringLiteral",
+      "offset": 359,
       "length": 16,
       "value": "\"device.getInfo\""
     },
     {
-      "filePath": "\/Users\/ces\/Documents\/Ascendion\/MiniProgramSDK\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
       "kind": "StringLiteral",
-      "offset": 580,
+      "offset": 473,
       "length": 14,
       "value": "\"user.getInfo\""
     },
     {
-      "filePath": "\/Users\/ces\/Documents\/Ascendion\/MiniProgramSDK\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
       "kind": "StringLiteral",
-      "offset": 693,
+      "offset": 586,
       "length": 18,
       "value": "\"media.openCamera\""
     },
     {
-      "filePath": "\/Users\/ces\/Documents\/Ascendion\/MiniProgramSDK\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
       "kind": "StringLiteral",
-      "offset": 836,
-      "length": 20,
-      "value": "\"native.sendPayload\""
+      "offset": 703,
+      "length": 22,
+      "value": "\"native.navigateToApp\""
     },
     {
-      "filePath": "\/Users\/ces\/Documents\/Ascendion\/MiniProgramSDK\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
       "kind": "StringLiteral",
-      "offset": 955,
+      "offset": 814,
       "length": 13,
-      "value": "\"device.back\""
+      "value": "\"native.home\""
     },
     {
-      "filePath": "\/Users\/ces\/Documents\/Ascendion\/MiniProgramSDK\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
       "kind": "StringLiteral",
-      "offset": 1057,
-      "length": 13,
-      "value": "\"device.home\""
+      "offset": 891,
+      "length": 23,
+      "value": "\"native.handleDeeplink\""
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
+      "kind": "StringLiteral",
+      "offset": 999,
+      "length": 29,
+      "value": "\"location.getCurrentPosition\""
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Networking\/NetworkManager.swift",
+      "kind": "StringLiteral",
+      "offset": 1199,
+      "length": 69,
+      "value": "\"http:\/\/marketplace-alb-2088637517.ap-south-1.elb.amazonaws.com:9003\""
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Services\/LaunchService.swift",
+      "kind": "StringLiteral",
+      "offset": 871,
+      "length": 7,
+      "value": "\"nonce\""
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Services\/LaunchService.swift",
+      "kind": "Array",
+      "offset": 972,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Services\/LaunchService.swift",
+      "kind": "StringLiteral",
+      "offset": 1008,
+      "length": 9,
+      "value": "\"pending\""
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Utilities\/CameraPicker.swift",
+      "kind": "FloatLiteral",
+      "offset": 2018,
+      "length": 3,
+      "value": "0.9"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Utilities\/CameraPicker.swift",
+      "kind": "FloatLiteral",
+      "offset": 2472,
+      "length": 3,
+      "value": "0.9"
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Utilities\/OneShotLocation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 870,
+      "length": 2,
+      "value": "10"
     }
   ]
 }

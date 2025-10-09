@@ -1,6 +1,8 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
 // swift-module-flags: -target arm64-apple-ios15.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name MiniProgramSDK
+import AVFoundation
+import CoreLocation
 import Foundation
 import Swift
 import SwiftUI
@@ -9,30 +11,40 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+import os.log
+import os
 public struct MiniAppConfigurations : Swift.Codable {
   public let appId: Swift.String
   public let title: Swift.String
-  public let entryHtmlPath: Swift.String?
+  public let env: Swift.String?
+  public let nonce: Swift.String?
+  public let requestedVersion: Swift.String
   public let payload: Swift.String?
-  public init(appId: Swift.String, title: Swift.String = "Mini App", entryHtmlPath: Swift.String? = nil, payload: Swift.String? = nil)
+  public init(appId: Swift.String, title: Swift.String = "Mini App", env: Swift.String? = nil, nonce: Swift.String? = nil, requestedVersion: Swift.String, payload: Swift.String? = nil)
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
 @objc @_Concurrency.MainActor @preconcurrency final public class MiniAppViewController : UIKit.UIViewController, WebKit.WKScriptMessageHandler, WebKit.WKNavigationDelegate {
-  @_Concurrency.MainActor @preconcurrency public init(configuration: MiniProgramSDK.MiniAppConfigurations, registry: (any MiniProgramSDK.JSAPIRegistry)? = nil)
+  @_Concurrency.MainActor @preconcurrency weak final public var delegate: (any MiniProgramSDK.MiniAppDelegate)?
+  @_Concurrency.MainActor @preconcurrency public init(configuration: MiniProgramSDK.MiniAppConfigurations, registry: (any MiniProgramSDK.JSAPIRegistry)? = nil, delegate: (any MiniProgramSDK.MiniAppDelegate)? = nil)
   @available(*, unavailable)
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
   @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
   @_Concurrency.MainActor @preconcurrency @objc final public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
-  @objc deinit
 }
 @_Concurrency.MainActor @preconcurrency public struct MiniAppContainerView : SwiftUI.UIViewControllerRepresentable {
   public typealias UIViewControllerType = MiniProgramSDK.MiniAppViewController
-  @_Concurrency.MainActor @preconcurrency public init(configuration: MiniProgramSDK.MiniAppConfigurations, registry: (any MiniProgramSDK.JSAPIRegistry)? = nil)
+  @_Concurrency.MainActor @preconcurrency public init(configuration: MiniProgramSDK.MiniAppConfigurations, registry: (any MiniProgramSDK.JSAPIRegistry)? = nil, delegate: (any MiniProgramSDK.MiniAppDelegate)? = nil)
   @_Concurrency.MainActor @preconcurrency public func makeUIViewController(context: MiniProgramSDK.MiniAppContainerView.Context) -> MiniProgramSDK.MiniAppViewController
   @_Concurrency.MainActor @preconcurrency public func updateUIViewController(_ uiViewController: MiniProgramSDK.MiniAppViewController, context: MiniProgramSDK.MiniAppContainerView.Context)
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
   public typealias Body = Swift.Never
+  @available(iOS 13.0, tvOS 13.0, *)
+  @available(watchOS, unavailable)
+  @available(macOS, unavailable)
   public typealias Coordinator = Swift.Void
 }
 public protocol JSAPIHandler {
@@ -44,6 +56,27 @@ public protocol JSAPIRegistry {
 }
 public protocol JSBridgeProtocol {
   func invoke(method: MiniProgramSDK.JSAPIMethodName, params: Swift.String, callbackId: Swift.String)
+}
+public enum MiniAppEvent {
+  case CONSENT_CONFIRMED
+  case CONSENT_CANCELLED
+  case NAVIGATE_TO_HOST
+  case SESSION_TIMEOUT
+  case UNKNOWN
+  public var name: Swift.String {
+    get
+  }
+  public static func == (a: MiniProgramSDK.MiniAppEvent, b: MiniProgramSDK.MiniAppEvent) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol MiniAppDelegate : AnyObject {
+  func onEvent(event: MiniProgramSDK.MiniAppEvent, data: Swift.String?)
+}
+extension MiniProgramSDK.MiniAppDelegate {
+  public func onEvent(event: MiniProgramSDK.MiniAppEvent, data: Swift.String?)
 }
 public class APIHandler : MiniProgramSDK.JSAPIHandler {
   final public let method: MiniProgramSDK.JSAPIMethodName
@@ -70,13 +103,13 @@ public class JSAPIDispatcher {
   @objc deinit
 }
 public enum JSAPIMethodName : Swift.String {
-  case authGetToken
   case deviceGetInfo
   case userGetInfo
   case mediaOpenCamera
-  case nativeSendPayload
   case deviceBack
   case deviceHome
+  case nativeHandleDeeplink
+  case locationGetCurrentPosition
   case unknown
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
@@ -89,7 +122,10 @@ final public class JSBridge : MiniProgramSDK.JSBridgeProtocol {
   final public func invoke(method: MiniProgramSDK.JSAPIMethodName, params: Swift.String, callbackId: Swift.String)
   @objc deinit
 }
+public func openCameraAndReturnBase64(webView: WebKit.WKWebView, callbackId: Swift.String)
 extension MiniProgramSDK.MiniAppContainerView : Swift.Sendable {}
+extension MiniProgramSDK.MiniAppEvent : Swift.Equatable {}
+extension MiniProgramSDK.MiniAppEvent : Swift.Hashable {}
 extension MiniProgramSDK.JSAPIMethodName : Swift.Equatable {}
 extension MiniProgramSDK.JSAPIMethodName : Swift.Hashable {}
 extension MiniProgramSDK.JSAPIMethodName : Swift.RawRepresentable {}
