@@ -1720,8 +1720,8 @@
           },
           {
             "kind": "Var",
-            "name": "SESSION_TIMEOUT",
-            "printedName": "SESSION_TIMEOUT",
+            "name": "SESSION_LAUNCH",
+            "printedName": "SESSION_LAUNCH",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -1751,12 +1751,86 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:14MiniProgramSDK0A8AppEventO15SESSION_TIMEOUTyA2CmF",
-            "mangledName": "$s14MiniProgramSDK0A8AppEventO15SESSION_TIMEOUTyA2CmF",
+            "usr": "s:14MiniProgramSDK0A8AppEventO14SESSION_LAUNCHyA2CmF",
+            "mangledName": "$s14MiniProgramSDK0A8AppEventO14SESSION_LAUNCHyA2CmF",
             "moduleName": "MiniProgramSDK",
             "declAttributes": [
               "RawDocComment"
             ]
+          },
+          {
+            "kind": "Var",
+            "name": "SESSION_IN_PROGRESS",
+            "printedName": "SESSION_IN_PROGRESS",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MiniProgramSDK.MiniAppEvent.Type) -> MiniProgramSDK.MiniAppEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MiniAppEvent",
+                    "printedName": "MiniProgramSDK.MiniAppEvent",
+                    "usr": "s:14MiniProgramSDK0A8AppEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MiniProgramSDK.MiniAppEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MiniAppEvent",
+                        "printedName": "MiniProgramSDK.MiniAppEvent",
+                        "usr": "s:14MiniProgramSDK0A8AppEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14MiniProgramSDK0A8AppEventO19SESSION_IN_PROGRESSyA2CmF",
+            "mangledName": "$s14MiniProgramSDK0A8AppEventO19SESSION_IN_PROGRESSyA2CmF",
+            "moduleName": "MiniProgramSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "SESSION_TERMINATE",
+            "printedName": "SESSION_TERMINATE",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MiniProgramSDK.MiniAppEvent.Type) -> MiniProgramSDK.MiniAppEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MiniAppEvent",
+                    "printedName": "MiniProgramSDK.MiniAppEvent",
+                    "usr": "s:14MiniProgramSDK0A8AppEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MiniProgramSDK.MiniAppEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MiniAppEvent",
+                        "printedName": "MiniProgramSDK.MiniAppEvent",
+                        "usr": "s:14MiniProgramSDK0A8AppEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14MiniProgramSDK0A8AppEventO17SESSION_TERMINATEyA2CmF",
+            "mangledName": "$s14MiniProgramSDK0A8AppEventO17SESSION_TERMINATEyA2CmF",
+            "moduleName": "MiniProgramSDK"
           },
           {
             "kind": "Var",
@@ -2961,6 +3035,46 @@
           },
           {
             "kind": "Var",
+            "name": "nativeNavigateToApp",
+            "printedName": "nativeNavigateToApp",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MiniProgramSDK.JSAPIMethodName.Type) -> MiniProgramSDK.JSAPIMethodName",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "JSAPIMethodName",
+                    "printedName": "MiniProgramSDK.JSAPIMethodName",
+                    "usr": "s:14MiniProgramSDK15JSAPIMethodNameO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MiniProgramSDK.JSAPIMethodName.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JSAPIMethodName",
+                        "printedName": "MiniProgramSDK.JSAPIMethodName",
+                        "usr": "s:14MiniProgramSDK15JSAPIMethodNameO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14MiniProgramSDK15JSAPIMethodNameO19nativeNavigateToAppyA2CmF",
+            "mangledName": "$s14MiniProgramSDK15JSAPIMethodNameO19nativeNavigateToAppyA2CmF",
+            "moduleName": "MiniProgramSDK",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "nativeHandleDeeplink",
             "printedName": "nativeHandleDeeplink",
             "children": [
@@ -3653,6 +3767,13 @@
       "value": "false"
     },
     {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/MiniAppViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 28540,
+      "length": 2,
+      "value": "16"
+    },
+    {
       "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/SessionTimeoutController.swift",
       "kind": "BooleanLiteral",
       "offset": 923,
@@ -3670,55 +3791,62 @@
       "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Controller\/SessionTimeoutController.swift",
       "kind": "IntegerLiteral",
       "offset": 1330,
-      "length": 2,
-      "value": "60"
+      "length": 3,
+      "value": "120"
     },
     {
       "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
       "kind": "StringLiteral",
-      "offset": 359,
+      "offset": 364,
       "length": 16,
       "value": "\"device.getInfo\""
     },
     {
       "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
       "kind": "StringLiteral",
-      "offset": 473,
-      "length": 14,
-      "value": "\"user.getInfo\""
+      "offset": 478,
+      "length": 18,
+      "value": "\"user.getCustomer\""
     },
     {
       "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
       "kind": "StringLiteral",
-      "offset": 586,
+      "offset": 595,
       "length": 18,
       "value": "\"media.openCamera\""
     },
     {
       "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
       "kind": "StringLiteral",
-      "offset": 703,
-      "length": 22,
-      "value": "\"native.navigateToApp\""
+      "offset": 712,
+      "length": 13,
+      "value": "\"device.back\""
     },
     {
       "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
       "kind": "StringLiteral",
       "offset": 814,
       "length": 13,
-      "value": "\"native.home\""
+      "value": "\"device.home\""
     },
     {
       "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
       "kind": "StringLiteral",
-      "offset": 891,
+      "offset": 937,
+      "length": 22,
+      "value": "\"native.navigateToApp\""
+    },
+    {
+      "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
+      "kind": "StringLiteral",
+      "offset": 1057,
       "length": 23,
       "value": "\"native.handleDeeplink\""
     },
     {
       "filePath": "\/Users\/CES\/repo\/mini-program-ios-sdk-core\/MiniProgramSDK\/Sources\/Core\/JSAPIMethodName.swift",
       "kind": "StringLiteral",
-      "offset": 999,
+      "offset": 1178,
       "length": 29,
       "value": "\"location.getCurrentPosition\""
     },
