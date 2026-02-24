@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
-// swift-module-flags: -target x86_64-apple-ios15.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name MiniProgramSDK
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+// swift-module-flags: -target x86_64-apple-ios15.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name MiniProgramSDK
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import AVFoundation
 import CoreLocation
 import Foundation
@@ -11,51 +12,51 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+import _WebKit_SwiftUI
 import os.log
 import os
+public struct HostAppContext : Swift.Codable {
+  public let appId: Swift.String
+  public let environment: Swift.String
+  public let timestamp: Swift.Int64
+  public let entryPoint: Swift.String
+  public let hostSessionId: Swift.String
+  public let rmRef: Swift.String
+  public let security: MiniProgramSDK.HostAppContext.SecurityContext?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(appId: Swift.String, environment: Swift.String, timestamp: Swift.Int64, entryPoint: Swift.String, hostSessionId: Swift.String, rmRef: Swift.String, security: MiniProgramSDK.HostAppContext.SecurityContext? = nil)
+  #endif
+  public struct SecurityContext : Swift.Codable {
+    public let deviceBindingId: Swift.String?
+    public let attestationToken: Swift.String?
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init(deviceBindingId: Swift.String? = nil, attestationToken: Swift.String? = nil)
+    #endif
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public enum Environment {
+    public static let SIT: Swift.String
+    public static let UAT: Swift.String
+    public static let PREPROD: Swift.String
+    public static let PROD: Swift.String
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
 public struct MiniAppConfigurations : Swift.Codable {
   public let appId: Swift.String
   public let title: Swift.String
   public let env: Swift.String?
   public let nonce: Swift.String?
   public let requestedVersion: Swift.String
-  public let payload: Swift.String?
-  public init(appId: Swift.String, title: Swift.String = "Mini App", env: Swift.String? = nil, nonce: Swift.String? = nil, requestedVersion: Swift.String, payload: Swift.String? = nil)
+  public let sessionConfig: MiniProgramSDK.SessionConfig
+  public let context: MiniProgramSDK.HostAppContext?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(appId: Swift.String, title: Swift.String = "Mini App", env: Swift.String? = nil, nonce: Swift.String? = nil, requestedVersion: Swift.String, sessionConfig: MiniProgramSDK.SessionConfig? = nil, context: MiniProgramSDK.HostAppContext? = nil)
+  #endif
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
-}
-@objc @_Concurrency.MainActor @preconcurrency final public class MiniAppViewController : UIKit.UIViewController, WebKit.WKScriptMessageHandler, WebKit.WKNavigationDelegate {
-  @_Concurrency.MainActor @preconcurrency weak final public var delegate: (any MiniProgramSDK.MiniAppDelegate)?
-  @_Concurrency.MainActor @preconcurrency public init(configuration: MiniProgramSDK.MiniAppConfigurations, registry: (any MiniProgramSDK.JSAPIRegistry)? = nil, delegate: (any MiniProgramSDK.MiniAppDelegate)? = nil)
-  @available(*, unavailable)
-  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-  @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
-  @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
-  @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
-  @_Concurrency.MainActor @preconcurrency @objc final public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
-}
-@_Concurrency.MainActor @preconcurrency public struct MiniAppContainerView : SwiftUI.UIViewControllerRepresentable {
-  public typealias UIViewControllerType = MiniProgramSDK.MiniAppViewController
-  @_Concurrency.MainActor @preconcurrency public init(configuration: MiniProgramSDK.MiniAppConfigurations, registry: (any MiniProgramSDK.JSAPIRegistry)? = nil, delegate: (any MiniProgramSDK.MiniAppDelegate)? = nil)
-  @_Concurrency.MainActor @preconcurrency public func makeUIViewController(context: MiniProgramSDK.MiniAppContainerView.Context) -> MiniProgramSDK.MiniAppViewController
-  @_Concurrency.MainActor @preconcurrency public func updateUIViewController(_ uiViewController: MiniProgramSDK.MiniAppViewController, context: MiniProgramSDK.MiniAppContainerView.Context)
-  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
-  public typealias Body = Swift.Never
-  @available(iOS 13.0, tvOS 13.0, *)
-  @available(watchOS, unavailable)
-  @available(macOS, unavailable)
-  public typealias Coordinator = Swift.Void
-}
-public protocol JSAPIHandler {
-  var method: MiniProgramSDK.JSAPIMethodName { get }
-  func handle(params: [Swift.String : Any], callbackId: Swift.String, webView: WebKit.WKWebView)
-}
-public protocol JSAPIRegistry {
-  func handler(for method: MiniProgramSDK.JSAPIMethodName) -> (any MiniProgramSDK.JSAPIHandler)?
-}
-public protocol JSBridgeProtocol {
-  func invoke(method: MiniProgramSDK.JSAPIMethodName, params: Swift.String, callbackId: Swift.String)
 }
 public enum MiniAppEvent {
   case CONSENT_CONFIRMED
@@ -75,10 +76,75 @@ public enum MiniAppEvent {
   }
 }
 public protocol MiniAppDelegate : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   func onEvent(event: MiniProgramSDK.MiniAppEvent, data: Swift.String?)
+  #endif
 }
 extension MiniProgramSDK.MiniAppDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func onEvent(event: MiniProgramSDK.MiniAppEvent, data: Swift.String?)
+  #endif
+}
+public struct SessionConfig : Swift.Codable {
+  public let idleTimeoutMs: Swift.Int64
+  public let backgroundTimeoutMs: Swift.Int64
+  public let heartbeatIntervalMs: Swift.Int64
+  public init(idleTimeoutMs: Swift.Int64 = 5 * 60 * 1000, backgroundTimeoutMs: Swift.Int64 = 2 * 60 * 1000, heartbeatIntervalMs: Swift.Int64 = 60 * 1000)
+  public static func forSIT() -> MiniProgramSDK.SessionConfig
+  public static func forUAT() -> MiniProgramSDK.SessionConfig
+  public static func forPreprod() -> MiniProgramSDK.SessionConfig
+  public static func forProd() -> MiniProgramSDK.SessionConfig
+  public static func forEnvironment(_ environment: Swift.String) -> MiniProgramSDK.SessionConfig
+  public var idleTimeout: Foundation.TimeInterval {
+    get
+  }
+  public var backgroundTimeout: Foundation.TimeInterval {
+    get
+  }
+  public var heartbeatInterval: Foundation.TimeInterval {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_Concurrency.MainActor @preconcurrency final public class MiniAppViewController : UIKit.UIViewController, WebKit.WKScriptMessageHandler, WebKit.WKNavigationDelegate {
+  @_Concurrency.MainActor @preconcurrency weak final public var delegate: (any MiniProgramSDK.MiniAppDelegate)?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public init(configuration: MiniProgramSDK.MiniAppConfigurations, registry: (any MiniProgramSDK.JSAPIRegistry)? = nil, delegate: (any MiniProgramSDK.MiniAppDelegate)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @available(*, unavailable)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
+  @objc deinit
+  @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  #endif
+  @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency @objc final public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
+}
+@_Concurrency.MainActor @preconcurrency public struct MiniAppContainerView : SwiftUI.UIViewControllerRepresentable {
+  public typealias UIViewControllerType = MiniProgramSDK.MiniAppViewController
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public init(configuration: MiniProgramSDK.MiniAppConfigurations, registry: (any MiniProgramSDK.JSAPIRegistry)? = nil, delegate: (any MiniProgramSDK.MiniAppDelegate)? = nil)
+  #endif
+  @_Concurrency.MainActor @preconcurrency public func makeUIViewController(context: MiniProgramSDK.MiniAppContainerView.Context) -> MiniProgramSDK.MiniAppViewController
+  @_Concurrency.MainActor @preconcurrency public func updateUIViewController(_ uiViewController: MiniProgramSDK.MiniAppViewController, context: MiniProgramSDK.MiniAppContainerView.Context)
+  public typealias Body = Swift.Never
+  public typealias Coordinator = Swift.Void
+}
+public protocol JSAPIHandler {
+  var method: MiniProgramSDK.JSAPIMethodName { get }
+  func handle(params: [Swift.String : Any], callbackId: Swift.String, webView: WebKit.WKWebView)
+}
+public protocol JSAPIRegistry {
+  #if compiler(>=5.3) && $NonescapableTypes
+  func handler(for method: MiniProgramSDK.JSAPIMethodName) -> (any MiniProgramSDK.JSAPIHandler)?
+  #endif
+}
+public protocol JSBridgeProtocol {
+  func invoke(method: MiniProgramSDK.JSAPIMethodName, params: Swift.String, callbackId: Swift.String)
 }
 public class APIHandler : MiniProgramSDK.JSAPIHandler {
   final public let method: MiniProgramSDK.JSAPIMethodName
@@ -88,7 +154,9 @@ public class APIHandler : MiniProgramSDK.JSAPIHandler {
 }
 public class APIRegistry : MiniProgramSDK.JSAPIRegistry {
   public init(handlers: [any MiniProgramSDK.JSAPIHandler])
+  #if compiler(>=5.3) && $NonescapableTypes
   public func handler(for method: MiniProgramSDK.JSAPIMethodName) -> (any MiniProgramSDK.JSAPIHandler)?
+  #endif
   @objc deinit
 }
 extension MiniProgramSDK.APIRegistry {
@@ -114,7 +182,9 @@ public enum JSAPIMethodName : Swift.String {
   case nativeHandleDeeplink
   case locationGetCurrentPosition
   case unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -126,9 +196,9 @@ final public class JSBridge : MiniProgramSDK.JSBridgeProtocol {
   @objc deinit
 }
 public func openCameraAndReturnBase64(webView: WebKit.WKWebView, callbackId: Swift.String)
-extension MiniProgramSDK.MiniAppContainerView : Swift.Sendable {}
 extension MiniProgramSDK.MiniAppEvent : Swift.Equatable {}
 extension MiniProgramSDK.MiniAppEvent : Swift.Hashable {}
+extension MiniProgramSDK.MiniAppContainerView : Swift.Sendable {}
 extension MiniProgramSDK.JSAPIMethodName : Swift.Equatable {}
 extension MiniProgramSDK.JSAPIMethodName : Swift.Hashable {}
 extension MiniProgramSDK.JSAPIMethodName : Swift.RawRepresentable {}
